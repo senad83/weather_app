@@ -7,7 +7,12 @@ button.addEventListener ("click", function(event){
     console.log ("City")
     var city = document.getElementById ("cityinput").value;
     var cities = JSON.parse(localStorage.getItem("cities"))
-    cities.push(city)
+    if (cities) {
+        cities.push(city);
+    } else {
+        cities = [];
+    } 
+    
     localStorage.setItem('cities', JSON.stringify(cities));
     saving(city)
     var pastcities = document.getElementById ("pastcities")
