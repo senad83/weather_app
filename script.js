@@ -1,4 +1,8 @@
 
+var cities = JSON.parse(localStorage.getItem("cities"))
+if (cities) {
+   saving(cities[0])
+} 
 
 
 var button = document.getElementById ("button")
